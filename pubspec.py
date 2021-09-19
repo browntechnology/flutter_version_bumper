@@ -47,4 +47,5 @@ def bumpPubspecVersion(isHotfix):
     
     pubspec["version"] = v.versionString()
     _writePubspec(pubspec)
+    return v.versionString()
    

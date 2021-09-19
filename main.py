@@ -1,4 +1,6 @@
 import pubspec as p
+import git
+import sys
 
 help_str = """
 Welcome to flutter_bump_version Tool.
@@ -16,7 +18,22 @@ Options:
 """
 
 def main():
-    p.bumpPubspecVersion(False)
+    if len(sys.argv) < 2:
+        print(help_str)
+        return
+    
+    newVersion = ""
+    if sys.argv[1] == "bump":
+        newVersion = p.bumpPubspecVersion("--hotfix" in sys.argv)
+    elif sys.argv[1] == "set":
+        if len(sys.argv) < 3:
+            print(help_str)
+            return
+        p.setPubspecVersion(sys.argv[2])
+        newVersion = sys.argv[2]
+    
+    if "--commit" in  sys.argv:
+        git.gitCommitAndTag(newVersion, "--stable" not in sys.argv)
 
 if __name__ == "__main__":
     main()
