@@ -1,4 +1,4 @@
-# This file holds the functions to update and bump the version in pubspec.yml file
+# This file holds the functions to update and bump the version in pubspec.yaml file
 
 from version import Version
 
@@ -11,8 +11,8 @@ import yaml
 import collections
 
 def _readPubspec():
-    # Reading the pubspec.yml file
-    pubspec_r_stream = open("pubspec.yml", "r")
+    # Reading the pubspec.yaml file
+    pubspec_r_stream = open("pubspec.yaml", "r")
     pubspec = yaml.load(pubspec_r_stream, Loader=Loader)
     pubspec_r_stream.close()
 
@@ -27,18 +27,18 @@ class CustomDumper(yaml.Dumper):
 CustomDumper.add_representer(dict, CustomDumper.represent_dict_preserve_order)
 
 def _writePubspec(pubspec_dict):
-     # Writing the changes to pubspec.yml file
-    pubspec_w_stream = open("pubspec.yml", "w")
+     # Writing the changes to pubspec.yaml file
+    pubspec_w_stream = open("pubspec.yaml", "w")
     pubspec_w_stream.write(yaml.dump(pubspec_dict, Dumper=CustomDumper))
     pubspec_w_stream.close()
 
-# Set the version of pubspec.yml file
+# Set the version of pubspec.yaml file
 def setPubspecVersion(new_version_str):
     pubspec = _readPubspec()
     pubspec["version"] = new_version_str
     _writePubspec(pubspec)
 
-# Bump pubspec.yml version
+# Bump pubspec.yaml version
 def bumpPubspecVersion(isHotfix):
     pubspec = _readPubspec()
 
