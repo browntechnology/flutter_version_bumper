@@ -16,7 +16,7 @@ Options:
 """
 
 def main():
-    print(help_str)
+    p.bumpPubspecVersion(False)
 
 if __name__ == "__main__":
     main()
