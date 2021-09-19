@@ -2,7 +2,7 @@
 This is a command line tool to manage flutter projects versioning.
 
 # Installation
-Copy `flutterver` executable (from `dist` folder) to your flutter project location.
+Copy `flutterver` executable (from `dist` folder) to your Flutter project location.
 
 # Usage
 Syntax: `flutterver COMMAND [options]`
