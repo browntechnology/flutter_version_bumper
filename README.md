@@ -1,8 +1,8 @@
-# Flutter Version Bumper
+# flutterver: Flutter Versioning
 This is a command line tool to manage flutter projects versioning.
 
 # Usage
-Syntax: `flutter_bump_version COMMAND [options]`
+Syntax: `flutterver COMMAND [options]`
 
 Commands:
 
@@ -26,7 +26,7 @@ Options:
 ## Bump the version automatically
 Bumping the version `A.B.C` starting from `C`, Maximum value for `C` and `B` is 9. `A` doesn't have a maximum value.
 
-Command: ```$ flutter_bump_version bump```
+Command: ```$ flutterver bump```
 
 Result Examples:
 
@@ -47,7 +47,7 @@ Result Examples:
 ## Bump or add version hotfix
 Bumping the `X` value in version `A.B.C+X` or add `+1` in version `A.B.C`. `X` value has no maximum.
 
-Command: ```$ flutter_bump_version bump --hotfix```
+Command: ```$ flutterver bump --hotfix```
 
 Result Examples:
 
@@ -67,7 +67,7 @@ Set the version to version `A.B.C+X` or `A.B.C`.
 
 `NOTICE: Only A.B.C or A.B.C+X versioning is acceptable`
 
-Command: ```$ flutter_bump_version set 2.0.4+2```
+Command: ```$ flutterver set 2.0.4+2```
 
 Result Examples:
 
