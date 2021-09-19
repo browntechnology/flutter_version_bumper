@@ -31,6 +31,9 @@ def main():
             return
         p.setPubspecVersion(sys.argv[2])
         newVersion = sys.argv[2]
+    else:
+        print(help_str)
+        return
     
     if "--commit" in  sys.argv:
         git.gitCommitAndTag(newVersion, "--stable" not in sys.argv)
